@@ -1,0 +1,27 @@
+[package]
+  name = "greeter"
+  version = "0.1.0"
+  authors = ["Conrad Taylor <conradwt@gmail.com>"]
+  edition = "2021"
+
+# server binary
+
+[[bin]]
+  name = "greeter-server"
+  path = "src/server.rs"
+
+# client binary
+
+[[bin]]
+  name = "greeter-client"
+  path = "src/client.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+  tonic = "0.7.2"
+  prost = "0.10.4"
+  tokio = { version = "1.19.2", features = ["macros", "rt-multi-thread"] }
+
+[build-dependencies]
+  tonic-build = "0.7"
